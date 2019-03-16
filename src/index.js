@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './assets/index.scss';
 import './assets/fonts/_fonts.scss';
@@ -10,10 +10,13 @@ import i18next from "i18next";
 require ('./i18n');
 
 i18next.on('loaded', function(loaded) {
+
   ReactDOM.render((
+    <Suspense fallback={<div>Loading...</div>}>
     <BrowserRouter>
     <App />
     </BrowserRouter>
+    </Suspense>
   ), document.getElementById('app'))
 })
 

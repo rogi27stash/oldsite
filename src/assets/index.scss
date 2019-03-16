@@ -36,6 +36,7 @@ p a {
   padding-bottom: 3px;
   text-shadow: 0 2px 12px rgba(252, 2, 2, 0.8);
   transition: all 0.1s ease-in;
+
   &:hover {
     color: #FC0203;
     text-shadow: 0 2px 15px rgba(252, 2, 2, 1);
@@ -138,7 +139,7 @@ p {
 .card-block {
   border-radius: 10px;
   position: relative;
-  margin: 3em auto;
+  margin: 2em auto;
   max-width: 60rem;
   color: var(--c-text);
 
@@ -209,6 +210,7 @@ nav.primary-nav {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+
   .grid__item {
     flex-grow: 1;
     margin: 12px;
@@ -224,10 +226,12 @@ nav.primary-nav {
 
 footer {
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
+
   p {
     color: rgba(240, 242, 239, 0.3);
     font-size: 12px;
+    margin: 0;
   }
 }
 
@@ -241,7 +245,8 @@ p.subheading {
   text-align: center;
   max-width: 600px;
   font-size: 14px;
-  margin: 12px auto;
+  margin: auto;
+  margin-bottom: 2em;
 }
 
 #contacts {
@@ -251,7 +256,7 @@ p.subheading {
 
 .skills-card {
   background: transparent;
-text-align: center;
+  text-align: center;
   max-width: 360px;
   border: 1px solid #fc0203;
   user-select: none;
@@ -268,13 +273,15 @@ text-align: center;
       margin-top: 8px;
     }
   }
+
   &__data {
     margin-top: 22px;
     margin-bottom: 22px;
+
     p {
-    font-size: 16px;
-    color: #F0F2EF;
-    margin: 0 10px;
+      font-size: 16px;
+      color: #F0F2EF;
+      margin: 0 10px;
     }
 
     p.data__title {
@@ -290,15 +297,17 @@ text-align: center;
     border-top: 1px solid #FC0203;
     box-shadow: 0 4px 40px 0 rgba(252, 2, 3, 0.4);
     background: transparentize(#FC0203, 0.8);
+
     .progressbar__progress {
       position: relative;
       height: 28px;
       width: 80%;
       background: transparentize(#FC0203, 0.2);
       text-align: center;
+
       span {
         color: #F0F2EF;
-        
+
         font-size: 12px;
         font-weight: 600;
         position: relative;
@@ -308,14 +317,25 @@ text-align: center;
         transform: translate(-50%, -50%);
       }
     }
-  
+
   }
 
 }
 
-@media (max-width: 1000px) {
-  .grid__item, .grid__item_2 {
+@media (max-width: 800px) {
+
+  .grid__item,
+  .grid__item_2 {
     width: inherit !important;
     flex-grow: 0 !important;
   }
+
+  .button {
+    padding: 20px 20px;
+  }
+
+  .skills-card {
+    max-width: 100%;
+  }
+
 }
