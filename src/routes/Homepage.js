@@ -37,7 +37,7 @@ function Homepage() {
                     <b>TypeScript</b>. {t("homepage_strings.about3")}.</p>
                 <p>{t("homepage_strings.job_warning")} <span role="img">👌</span>
                 </p>
-                <Link className="button mr-r-20" to="/about/">{t("homepage_strings.btn_skills")}
+                <Link className="button mr-r-20" to="/skills/">{t("homepage_strings.btn_skills")}
                 </Link>
                 <Link className="button" to="/contact/">
                 {t("homepage_strings.btn_contacts")}
