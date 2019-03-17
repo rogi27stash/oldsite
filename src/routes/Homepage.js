@@ -1,8 +1,18 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import PageTitle from '../components/PageTitle';
 
-const Homepage = ({match}) => (
+import { useTranslation } from 'react-i18next';
+
+function Homepage() {
+
+    const { t } = useTranslation();
+    
+    return (
+
     <div>
+
+    <PageTitle titleName={t("page_titles.homepage")}/>
 
         <div className="card-block">
             <div className="card-block__inner">
@@ -18,28 +28,23 @@ const Homepage = ({match}) => (
                     </a>
                 </div>
 
-                <p className="heading">Игорь "Voknehzyr" Рыженков</p>
-                <p>Семнадцатилетний начинающий программист-самоучка из Москвы, изучаю языки программирования <b>C#</b>,&nbsp;
+                <p className="heading">{t("homepage_strings.name")}</p>
+                <p>{t("homepage_strings.about1")} <b>C#</b>,&nbsp;
                     <b>Java</b>,&nbsp;
                     <b>JavaScript</b>
-                    &nbsp;и&nbsp;
-                    <b>Python</b>. В дальнейшем хочу изучить&nbsp;
-                    <b>C++</b>,&nbsp;
-                    <b>Kotlin</b>,&nbsp;
-                    <b>TypeScript</b>. Также занимаюсь переводом приложений с английского на русский язык.</p>
-                <p>На данный момент у меня нет работы и я не могу никуда устроиться ибо у меня
-                    нет законченного образования, но я буду стараться его получить
-                    <span role="img">👌</span>
+                    &nbsp;{t("homepage_strings.about_and")}&nbsp;
+                    <b>Python</b>. {t("homepage_strings.about2")} <b>C++</b>, <b>Kotlin</b>,&nbsp;
+                    <b>TypeScript</b>. {t("homepage_strings.about3")}.</p>
+                <p>{t("homepage_strings.job_warning")} <span role="img">👌</span>
                 </p>
-                <Link className="button mr-r-20" to="/about/">Мои навыки
-
+                <Link className="button mr-r-20" to="/skills/">{t("homepage_strings.btn_skills")}
                 </Link>
                 <Link className="button" to="/contact/">
-                    Контакты
+                {t("homepage_strings.btn_contacts")}
                 </Link>
             </div>
         </div>
     </div>
-)
+)};
 
 export default Homepage
