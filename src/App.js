@@ -11,11 +11,13 @@ import NotFound from "./routes/NotFound";
 import WebsiteFooter from "./components/Footer";
 
 // Translations
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import "./i18n";
 
 function App() {
     
+    const { t } = useTranslation();
+
     return (
 
     <div>
@@ -24,13 +26,13 @@ function App() {
             <div className="primary-nav__wrapper">
                 <div className="primary-nav-inner">
                     <NavLink exact to="/" className="primary-nav__item">
-                        <Trans i18nKey="navbar.homepage">Обо мне</Trans>
+                        {t("navbar.homepage")}
                     </NavLink>
-                    <NavLink to="/about/" className="primary-nav__item">
-                        <Trans i18nKey="navbar.skills">Навыки</Trans>
+                    <NavLink to="/skills" className="primary-nav__item">
+                    {t("navbar.skills")}
                     </NavLink>
-                    <NavLink to="/contact/" className="primary-nav__item">
-                        <Trans i18nKey="navbar.contacts">Контакты</Trans>
+                    <NavLink to="/contact" className="primary-nav__item">
+                    {t("navbar.contacts")}
                     </NavLink>
                 </div>
             </div>
@@ -39,7 +41,7 @@ function App() {
         <Switch className="switch-wrapper">
 
             <Route exact path="/" component={Homepage}/>
-            <Route path="/about/" component={Skills}/>
+            <Route path="/skills/" component={Skills}/>
             <Route path="/contact/" component={Contact}/>
             <Route component={NotFound}/>
 

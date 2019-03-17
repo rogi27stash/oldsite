@@ -20,6 +20,12 @@ function Skills() {
                 <div className="grid">
                     <div className="grid__item">
                         <SkillsBlock
+                            language="React"
+                            desc={t("skills_strings.cards_react_desc") + "."}
+                            progress="13"/>
+                    </div>
+                    <div className="grid__item">
+                        <SkillsBlock
                             language="JavaScript"
                             desc={t("skills_strings.cards_js_desc") + "."}
                             progress="34"/>
@@ -66,7 +72,7 @@ function Skills() {
                             desc={t("skills_strings.cards_python_desc") + "."}
                             progress="9"/>
                     </div>
-                    <div className="grid__item">
+                    <div className="grid__item grid__item_2">
                         <SkillsBlock
                             language="PHP"
                             desc={t("skills_strings.cards_php_desc") + "."}
