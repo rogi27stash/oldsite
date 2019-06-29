@@ -1,7 +1,6 @@
 import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './assets/index.scss';
-import './assets/fonts/_fonts.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
@@ -10,7 +9,6 @@ import i18next from "i18next";
 require ('./i18n');
 
 i18next.on('loaded', function(loaded) {
-
   ReactDOM.render((
     <Suspense fallback={<div>Loading...</div>}>
     <BrowserRouter>

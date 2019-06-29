@@ -19,7 +19,8 @@ function Homepage() {
 
                 <div className="avatar-container">
                     <a
-                        target="_blank"
+                        target = "_blank"
+                        rel = "noopener noreferrer"
                         href="https://gatodelfuturo.tumblr.com/"
                         title="Artwork by Gaturo, click on this link to open his page!">
                         <div className="avatar-wrapper">
@@ -35,7 +36,7 @@ function Homepage() {
                     &nbsp;{t("homepage_strings.about_and")}&nbsp;
                     <b>Python</b>. {t("homepage_strings.about2")} <b>C++</b>, <b>Kotlin</b>,&nbsp;
                     <b>TypeScript</b>. {t("homepage_strings.about3")}.</p>
-                <p>{t("homepage_strings.job_warning")} <span role="img">👌</span>
+                <p>{t("homepage_strings.job_warning")} <span role="img" aria-label="OK">👌</span>
                 </p>
                 <Link className="button mr-r-20" to="/skills/">{t("homepage_strings.btn_skills")}
                 </Link>

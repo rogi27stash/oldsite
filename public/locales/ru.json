@@ -1,11 +1,13 @@
 {
     "page_titles": {
         "homepage": "Обо мне",
+        "projects": "Проекты",
         "skills": "Навыки",
         "contacts": "Контакты"
     },
     "navbar": {
         "homepage": "Обо мне",
+        "projects": "Проекты",
         "skills": "Навыки",
         "contacts": "Контакты"
     },

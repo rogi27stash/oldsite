@@ -1,11 +1,15 @@
 import React from "react";
-import {Route, Switch, NavLink} from "react-router-dom";
+import {Route, NavLink} from "react-router-dom";
 
 // Pages
 import Homepage from "./routes/Homepage";
+import {Projects, Project} from "./routes/Projects";
 import Contact from "./routes/Contact";
 import Skills from "./routes/Skills";
 import NotFound from "./routes/NotFound";
+
+import TransitionSwitch from 'react-router-transition-switch'
+import Fader from 'react-fader'
 
 // Components
 import WebsiteFooter from "./components/Footer";
@@ -26,7 +30,10 @@ function App() {
             <div className="primary-nav__wrapper">
                 <div className="primary-nav-inner">
                     <NavLink exact to="/" className="primary-nav__item">
-                        {t("navbar.homepage")}
+                    {t("navbar.homepage")}
+                    </NavLink>
+                    <NavLink to="/projects" className="primary-nav__item">
+                    {t("navbar.projects")}
                     </NavLink>
                     <NavLink to="/skills" className="primary-nav__item">
                     {t("navbar.skills")}
@@ -38,14 +45,16 @@ function App() {
             </div>
         </nav>
 
-        <Switch className="switch-wrapper">
+        <TransitionSwitch component={Fader}>
 
             <Route exact path="/" component={Homepage}/>
+            <Route path="/projects/" component={(props) => <Projects {...props} />}/>
+            <Route path="/projects/:project" component={(props) => <Project {...props} />}/>
             <Route path="/skills/" component={Skills}/>
             <Route path="/contact/" component={Contact}/>
             <Route component={NotFound}/>
 
-        </Switch>
+        </TransitionSwitch>
 
         <WebsiteFooter/>
 

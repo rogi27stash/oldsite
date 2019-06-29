@@ -1,3 +1,5 @@
+/* eslint-disable no-script-url */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
 class LanguageSwitcher extends React.Component {
@@ -13,11 +15,11 @@ class LanguageSwitcher extends React.Component {
         switch (i18n.language) {
             case `ru`:
                 return (
-                    <a onClick={() => this.setLanguage('en')} href="javascript:void(0)">Switch language to English</a>
+                    <a onClick={() => this.setLanguage('en')} href="javascript:void(0);">Switch language to English</a>
                 );
             case `en`:
                 return (
-                    <a onClick={() => this.setLanguage('ru')} href="javascript:void(0)">Поменять язык на Русский</a>
+                    <a onClick={() => this.setLanguage('ru')} href="javascript:void(0);">Поменять язык на Русский</a>
                 );
             default:
                 return null;
