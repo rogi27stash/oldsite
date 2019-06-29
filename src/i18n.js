@@ -1,23 +1,23 @@
-import i18n from "i18next";
-import Backend from "i18next-xhr-backend";
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from "react-i18next";
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
 
-i18n
-.use(LanguageDetector)
-.use(Backend)
-  .use(initReactI18next) // passes i18n down to react-i18next
-  .init({
+Vue.use(VueI18n)
 
-    backend: {
-      loadPath: '/locales/{{lng}}.json',
-    },
-
-    fallbackLng: 'en',
-
-    interpolation: {
-      escapeValue: false // react already safes from xss
+function loadLocaleMessages () {
+  const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
+  const messages = {}
+  locales.keys().forEach(key => {
+    const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+    if (matched && matched.length > 1) {
+      const locale = matched[1]
+      messages[locale] = locales(key)
     }
-  }); 
+  })
+  return messages
+}
 
-  export default i18n;
+export default new VueI18n({
+  locale: process.env.VUE_APP_I18N_LOCALE || 'en',
+  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
+  messages: loadLocaleMessages()
+})
