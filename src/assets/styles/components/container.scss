@@ -1,0 +1,294 @@
+.container {
+
+    position: relative;
+    padding: 30px;
+    z-index: 2;
+
+    &__details {
+        flex: 1;
+
+        &--heading {
+
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            font-weight: 800;
+            margin: 1.5em 0;
+
+            &_themed {}
+
+        }
+    }
+
+    &_theme-secondary {
+
+        z-index: 1;
+    }
+
+    &_projects {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+
+        overflow: hidden;
+
+        .projects__content {
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-flow: column;
+
+            .project-card {
+                overflow: hidden;
+                user-select: none;
+                display: flex;
+                position: relative;
+                align-items: center;
+                padding: 60px;
+                margin: 10px 0;
+                height: 150px;
+
+                background: #1A1C1E;
+
+                border-radius: 8px;
+
+                &__hover-container {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: transparentize(lighten($colors-bg-primary, 5%), 0.05);
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+
+                    z-index: 3;
+                }
+
+                &__brand {
+                    position: relative;
+                    z-index: 2;
+                    flex: 25%;
+
+                    margin-right: 3em;
+
+                    img {
+                        display: flex;
+                        margin: 0 auto;
+                        max-width: 160px;
+                        border-radius: 6px;
+                    }
+                }
+
+                &__details {
+                    position: relative;
+                    z-index: 2;
+                    flex: 75%;
+
+                    h2 {
+                        font-size: 2.2em;
+                        font-weight: 700;
+                        margin: 0;
+                    }
+
+                    p {
+                        font-size: 1.2em;
+                        font-weight: 500;
+                        margin: 6px 0;
+                    }
+
+                    &--technologies * {
+                        display: inline-block;
+                        margin-top: 1em;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+    &_contacts {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+
+        &--content {
+            font-weight: 700;
+            font-size: 1.5em;
+            text-align: center;
+        }
+    }
+
+    &_contact {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-flow: column;
+
+        display: flex;
+
+        min-height: 100vh;
+
+        .container__details {
+            flex: 0;
+        }
+    }
+
+    &_skills {
+
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+
+        min-height: 100vh;
+
+        .skill-categories {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 2em;
+
+            .label {
+                &.active {
+                    background: $colors-items-primary;
+                    color: white;
+                }
+            }
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            .skill-card {
+                display: flex;
+                flex-wrap: wrap;
+                background: lighten($colors-bg-primary, 6%);
+                border-radius: 8px;
+                padding: 20px;
+                margin: 10px;
+                width: 200px;
+
+                font-weight: 500;
+                transition: all 150ms ease-in-out;
+
+                &:hover {
+                    background: lighten($colors-bg-primary, 8%);
+                    transform: scale(1.1);
+                    box-shadow: 0 0 62px 6px $colors-bg-primary;
+                }
+
+                div.logo {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 150px;
+                    height: 150px;
+                    margin: 0 auto;
+                    overflow: hidden;
+
+                    img {
+                        border-radius: 8px;
+                        width: 128px;
+                    }
+                }
+
+                div {
+                    h3 {
+                        flex: 1;
+                        font-size: 1.5em;
+                        margin: 0.9em 0 0.3em 0;
+                    }
+
+                    p {
+                        font-size: 0.9em;
+                        margin: 0.1em 0;
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
+    &_intro {
+        display: flex;
+        flex-wrap: wrap;
+
+        font-size: 2em;
+        height: 100vh;
+        margin-top: -77px;
+
+        align-items: center;
+
+        max-width: none;
+
+        .container__floating-liquid {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: -12vw;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(0deg, $colors-bg-primary 1%, transparent 90%);
+                z-index: 1;
+            }
+        }
+
+        div.intro__content {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: -77px;
+            z-index: 2;
+            flex: 1;
+
+            h1 {
+                display: inline-block;
+                font-weight: 800;
+                letter-spacing: -1px;
+                color: rgb(255, 255, 255);
+                font-size: 2.5em;
+            }
+
+            p {
+                line-height: 1.35;
+                font-size: 0.8em;
+                font-weight: 600;
+            }
+
+            .intro-buttons {
+                margin-top: 1em;
+
+                .button {
+                    margin-right: 1em;
+                }
+            }
+
+        }
+
+    }
+
+}

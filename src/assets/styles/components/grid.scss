@@ -1,0 +1,18 @@
+.grid {
+   
+    display: flex;
+    
+    &__item {
+        &_75 {
+            flex: 75%;
+        }
+        &_25 {
+            flex: 25%;
+        }
+    }
+
+    &_centered {
+        justify-content: center;
+        align-items: center;
+    }
+}

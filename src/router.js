@@ -16,26 +16,17 @@ export default new Router({
     {
       path: "/contacts",
       name: "contacts",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Contacts.vue")
-    },
-    {
-      path: "/skills",
-      name: "skills",
-      component: () => import("./views/Skills.vue")
+      component: () => import("./views/Contacts.vue")
     },
     {
       path: "/projects",
       name: "projects",
-      component: () => import("./views/Projects.vue")
+      component: () => import("./views/project/Projects.vue")
     },
     {
       path: "/project/:id",
       name: "project",
-      component: () => import("./views/Project.vue")
+      component: () => import("./views/project/ProjectPage.vue")
     },
     {
       path: "/blog",
@@ -45,11 +36,11 @@ export default new Router({
     {
       path: "/post/:id",
       name: "post",
-      component: () => import("./views/PostFullpage.vue")
+      component: () => import("./views/blog/PostFullpage.vue")
     },
     {
       path: "*",
-      component: () => import("./views/NotFound.vue")
+      component: () => import("./views/errors/NotFound.vue")
     }
   ]
 });

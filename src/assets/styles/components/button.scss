@@ -1,0 +1,36 @@
+button, .button {
+
+      display: inline-block;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 0.9rem 4em;
+      position: relative;
+      border-radius: 50em;
+      font-weight: bold; 
+      user-select: none;
+      text-align: center;
+
+      transition: all 0.3s cubic-bezier(0.09, 0.1, 0.35, 0.96);
+
+}
+
+@mixin button-colored($color) {
+
+    background: $color;
+    color: white;
+
+    &:hover {
+      background: lighten($color, 5%);
+      box-shadow: 0 2px 34px -2px lighten(transparentize($color, 0.5), 5%);
+    }
+
+    &:active {
+      background: darken($color, 5%);
+      box-shadow: 0 2px 34px -2px transparent;
+    }
+
+}
+
+button, .button {
+  @include button-colored($colors-items-primary);
+}

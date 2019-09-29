@@ -4,27 +4,13 @@
  * 
  */
 
-:root {
-    --c-bg: #000000;
-    --c-red: #FF002A;
-    --c-text: #FFF7FA;
+$colors-items-primary: #FF2E46;
+$colors-items-secondary: rgb(250, 250, 250);
+$colors-bg-primary: hsl(0, 0, 4%);
+$colors-bg-secondary: rgb(26, 24, 27);
 
-    --c-btn-bg: #FF002A;
-    --c-btn-shadow: rgba(253, 15, 55, 0.5);
-    --c-btn-bg-hover: rgb(253, 15, 55);
-    --c-btn-bg-active: rgb(199, 0, 33);
-}
+* {
 
-#app {
-    overflow: hidden;
-}
-
-body {
-    background-color: var(--c-bg);
-    color: var(--c-text);
-    letter-spacing: 0.3px;
-    margin: 0;
-    padding: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
         "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
         sans-serif;
@@ -32,35 +18,37 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+body,
+html {
+    scroll-behavior: smooth;
+    background-color: $colors-bg-primary;
+    color: $colors-items-secondary;
+    margin: 0;
+    padding: 0;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
-}
+} 
 
 a {
-    color: var(--c-text);
     text-decoration: none;
+}
+
+a:not(.button):not(.label) {
+    color: $colors-items-primary;
     transition: all 0.1s ease-in;
+    font-weight: 500;
+
     &:hover {
-        color: var(--c-btn-hover);
+        text-decoration: underline;
     }
 }
 
-.bordered-links {
-    a {
-        color: var(--c-text);
-        padding-bottom: 3px;
-        border-bottom: 1px solid var(--c-red);
-        transition: all 0.2s ease-in;
-        &:hover {
-            color: var(--c-btn-hover);
-            border-bottom: 1px solid var(--c-btn-hover);
-        }
-    }
-}
-
-.text-red {
-    color: var(--c-red);
+span.text-highlight {
+    font-weight: 700;
+    color: $colors-items-primary;
 }
 
 .content {
@@ -96,15 +84,51 @@ a {
     z-index: 1;
 }
 
+.footer {
+    margin: 6em auto;
+    max-width: 1200px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+body::-webkit-scrollbar {
+    width: 0.7em;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: lighten($colors-bg-primary, 15%);
+    border: 4px solid $colors-bg-primary;
+    &:hover {
+        background-color: $colors-items-primary;
+    }
+}
+
+/* <Animations> */
+@import "./components/animation.scss";
+/* </Animations> */
+
+/* <Grid> */
+@import "./components/grid.scss";
+/* </Grid> */
+
 /* <Navbar> */
-@import "_navbar";
+@import "./components/navbar.scss";
 /* </Navbar> */
 
-/* <Sections> */
-@import "_sections";
-/* </Sections> */
+/* <Containers> */
+@import "./components/container.scss";
+/* </Containers> */
 
 /* <Buttons> */
-@import "_buttons";
+@import "./components/button.scss";
 /* </Buttons> */
 
+/* <Labels> */
+@import "./components/label.scss";
+/* </Labels> */
+
+/* <Responsive> */
+@import "responsive.scss";
+/* </Responsive> */
