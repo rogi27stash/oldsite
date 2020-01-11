@@ -5,19 +5,22 @@ module.exports = {
       fallbackLocale: "ru",
       localeDir: "locales",
       enableInSFC: false
-    }
-  },
-  chainWebpack: config => {
-    config.module.rules.delete("svg");
-  },
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: /\.svg$/,
-          loader: "vue-svg-loader"
-        }
-      ]
+    },
+    ssr: {
+      defaultTitle: "IRyzhenkov"
     }
   }
+  // chainWebpack: config => {
+  //   config.module.rules.delete("svg");
+  // },
+  // configureWebpack: {
+  //   module: {
+  //     rules: [
+  //       {
+  //         test: /\.svg$/,
+  //         loader: "vue-svg-loader"
+  //       }
+  //     ]
+  //   }
+  // }
 };

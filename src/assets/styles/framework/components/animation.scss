@@ -1,0 +1,52 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.2s;
+  transition-property: height, opacity, transform, z-index;
+  transition-timing-function: ease-in-out;
+
+}
+
+.fade-enter,
+.fade-leave-active {
+  z-index: 2;
+  opacity: 0;
+}
+
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition-duration: 0.2s;
+  transition-property: height, opacity, transform, z-index;
+  transition-timing-function: ease-in-out;
+
+}
+
+.fade-scale-enter,
+.fade-scale-leave-active {
+  z-index: 2;
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+
+.slider-enter-active,
+.slider-leave-active {
+  transition-duration: 0.2s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+
+.slider-leave-active,
+.slider-enter {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+}
+
+.slider-leave-active {
+  transform: translateX(-50%);
+}
+
+.slider-enter {
+  transform: translateX(50%);
+}
+

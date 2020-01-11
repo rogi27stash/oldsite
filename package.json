@@ -6,17 +6,23 @@
     "serve": "vue-cli-service serve --fix",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
-    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
+    "dev": "ssr:serve",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "ssr:build": "vue-cli-service ssr:build",
+    "ssr:serve": "vue-cli-service ssr:serve",
+    "ssr:start": "cross-env NODE_ENV=production vue-cli-service ssr:serve --mode production"
   },
   "dependencies": {
     "animejs": "^3.1.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-i18n": "^8.0.0",
-    "vue-meta": "^2.2.2",
-    "vue-router": "^3.0.3"
+    "vue-meta": "^2.3.1",
+    "vue-router": "^3.0.3",
+    "vue-server-renderer": "^2.6.0"
   },
   "devDependencies": {
+    "@akryum/vue-cli-plugin-ssr": "^0.6.0",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",

@@ -1,3 +1,74 @@
 {
-    "message": "[Hellow]"
+	"contacts": {
+		"info": "The most prioritized ways to contact me with warranty that I will answer you are {0} and {1}. But you still can write me a mail at {2}.",
+		"info_ps": "Please, tell me your reason first to get answer quickier and don't waste our time :)",
+		"title": "Contact with me"
+	},
+	"homepage": {
+		"about": {
+			"about": "<b>I'm</b> a beginner programmer from Moscow, studying at the specialty «<strong >Informational systems and programming</strong >». I'm trying to write clean and working code using <strong>JavaScript</strong>, and I also know English language to be able to understand the libraries documentation. I'm also learning <strong>C#</strong> and <strong>Java</strong>, in future I plan to learn <strong>C++</strong> and <strong>Kotlin</strong>. <strong >I was <a\n              target=\"blank_\"\n              href=\"https://drive.google.com/file/d/0B9ZQni85E5EPOGx2SkpDbVRDM1RZV09jS1Q2M19welZIREsw/view?usp=sharing\"\n              >{0}</a> in VIII Moscow Masters Professional Championship \"Moscow Masters\" by WorldSkills Russia standards on competence \"Web Design and Development\".</strong >",
+			"about2": "participating",
+			"heading": "About me"
+		},
+		"contact": {
+			"btn_contact": "Contact with me",
+			"title": "You have some work?",
+			"title_2": "Click that button below!"
+		},
+		"intro": {
+			"about_btn": "Learn more",
+			"contact_btn": "Contact with me",
+			"greeting": "I'm {0}, a beginner graphic designer and programmer.",
+			"greeting2": "Igor Ryzhenkov"
+		},
+		"skills": {
+			"btns": {
+				"additional": "Additional",
+				"backend": "Backend",
+				"frontend": "Frontend"
+			},
+			"heading": "Skills",
+			"knowledge": "Knowledge",
+			"sections": {
+				"additional": {
+					"desc": "I dedicate my free time not only to programming, but also by learning various programs to simplify my work.",
+					"title": "My {0} skills",
+					"title2": "additional"
+				},
+				"backend": {
+					"desc": "Continuous and error-free operation of applications is achieved by deep study of the pitfalls of the language in which the application is written. Here are the main technologies that I know how to work with and know their features.",
+					"title": "My {0} skills",
+					"title2": "backend development"
+				},
+				"frontend": {
+					"desc": "To create a beautiful and multi-functional website you need to know a certain stack of technologies, here are the main technologies which I know how to work with and know their features.",
+					"title": "My {0} skills",
+					"title2": "frontend development"
+				}
+			},
+			"skill_level1": "Basic",
+			"skill_level2": "Medium",
+			"skill_level3": "Advanced"
+		}
+	},
+	"navbar": {
+		"about": "About",
+		"contacts": "Contacts",
+		"projects": "Projects"
+	},
+	"projects": {
+		"projects": {
+			"btn_open_project": "Open project website",
+			"premid": {
+				"desc": "I designed the website in Figma and then coded it with additional features including the Presence Store.",
+				"title": "PreMiD"
+			},
+			"rumc": {
+				"desc": "I wrote a template system using JavaScript and updated the news adding page with new functionality using CSS-Framework UIKit",
+				"title": "Ru-Minecraft"
+			}
+		},
+		"title": "I contributed to this {0}.",
+		"title2": "projects"
+	}
 }

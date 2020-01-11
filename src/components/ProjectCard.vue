@@ -6,16 +6,19 @@
     :style="`background: ${brandColor};`"
   >
     <transition name="fade-scale" mode="out-in">
-      <div v-show="cardHovered" class="project-card__hover-container">
-        <a class="button" href="#">Просмотреть полностью</a>
+      <div
+        v-show="cardHovered && $slots.hoverObjects"
+        class="project-card__hover-container"
+      >
+        <slot name="hoverObjects"></slot>
       </div>
     </transition>
-    <div class="project-card__brand">
-      <img :src="brandURL" />
-    </div>
     <div class="project-card__details">
-      <h2>{{ brandName }}</h2>
-      <p>{{ brandDetails }}</p>
+      <h2><slot name="brandName"></slot></h2>
+      <slot name="brandDetails"></slot>
+    </div>
+    <div class="project-card__brand">
+      <img :src="brandIcon" />
     </div>
   </div>
 </template>
@@ -23,13 +26,7 @@
 <script>
 export default {
   name: "projectcard",
-  props: [
-    "brandURL",
-    "brandName",
-    "brandDetails",
-    "brandPageURL",
-    "brandColor"
-  ],
+  props: ["brandIcon", "brandColor"],
   data() {
     return {
       cardHovered: false

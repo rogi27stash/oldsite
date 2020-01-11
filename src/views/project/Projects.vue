@@ -1,28 +1,55 @@
 <template>
   <div class="projects-page">
-    <div class="container container_projects">
-      <div class="container__details">
-        <h1
-          class="container__details--heading container__details--heading_themed"
-        >
-          Я работал над этими <span class="text-highlight">проектами</span>.
-        </h1>
-      </div>
-      <div class="projects__content">
-        <ProjectCard
-          brandColor="#1a1a1a"
-          :brandURL="PremidLogo"
-          brandName="PreMiD"
-          brandDetails="В данном проекте я отвечал за фронтенд, я разработал и сверстал его дизайн, также реализовав функции, о которых меня попросили."
-        />
-        <ProjectCard
-          brandColor="#1a1a1a"
-          :brandURL="
-            `https://ru-minecraft.ru/templates/new2/images/topmenunew.png`
-          "
-          brandName="Ru-Minecraft"
-          brandDetails="Написал систему шаблонов для новостей на JavaScript, обновил страницу добавления новостей и реализовал новые элементы используя UIKit."
-        />
+    <div class="container container-section container-projects">
+      <div class="container__content">
+        <div>
+          <i18n path="projects.title" tag="h1">
+            <span>{{ $t("projects.title2") }}</span>
+          </i18n>
+        </div>
+        <div class="projects__content">
+          <ProjectCard brandColor="#101518" :brandIcon="PremidLogo">
+            <template #brandName>
+              PreMiD
+            </template>
+            <template #brandDetails>
+              <p>
+                {{ $t("projects.projects.premid.desc") }}
+              </p>
+            </template>
+            <template #hoverObjects>
+              <a
+                class="button button_black"
+                href="https://premid.app/"
+                target="_blank"
+                >{{ $t("projects.projects.btn_open_project") }}</a
+              >
+            </template>
+          </ProjectCard>
+          <ProjectCard
+            brandColor="#b67d2c"
+            :brandIcon="
+              `https://ru-minecraft.ru/templates/new2/images/topmenunew.png`
+            "
+          >
+            <template #brandName>
+              Ru-Minecraft
+            </template>
+            <template #brandDetails>
+              <p>
+                {{ $t("projects.projects.rumc.desc") }}
+              </p>
+            </template>
+            <template #hoverObjects>
+              <a
+                class="button button_black"
+                href="https://ru-minecraft.ru/"
+                target="_blank"
+                >{{ $t("projects.projects.btn_open_project") }}</a
+              >
+            </template>
+          </ProjectCard>
+        </div>
       </div>
     </div>
   </div>

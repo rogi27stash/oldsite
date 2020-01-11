@@ -1,0 +1,11 @@
+@media screen and (max-width: 720px) {
+    .on-tablet {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .on-phone {
+        display: none;
+    }
+}

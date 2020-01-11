@@ -1,167 +1,153 @@
 <template>
-  <div>
-    <div class="container__details">
-      <h1
-        class="container__details--heading container__details--heading_themed"
-      >
-        Мои знания <span class="text-highlight">технологий</span>.
-      </h1>
-    </div>
-    <div class="skill-categories">
-      <a
-        :class="{ active: 'all' == currentCategory }"
-        class="label label_large"
-        href="javascript:void(0);"
-        @click="changeCategory('all')"
-        >Все</a
-      >
-      <a
-        v-for="category in categories"
-        :key="category.name"
-        class="label label_large"
-        :class="{ active: currentCategory == category.id }"
-        href="javascript:void(0);"
-        @click="changeCategory(category.id)"
-        >{{ category.name }}</a
-      >
-    </div>
-    <transition-group tag="div" class="skills-container" name="fade">
-      <div
-        v-for="skillItem in filteredSkills"
-        :key="skillItem.title"
-        class="skill-card"
-      >
-        <div class="logo">
-          <img draggable="false" :src="skillItem.icon" />
-        </div>
-        <div>
-          <h3>{{ skillItem.title }}</h3>
-          <p>
-            Изученность:
-            <span
-              :class="`label label_` + knowledgeLevel(skillItem.level)[0]"
-              >{{ knowledgeLevel(skillItem.level)[1] }}</span
-            >
-          </p>
-        </div>
+  <div class="skills">
+    <div v-for="skill in filteredSkills" :key="skill.title" class="skill-card">
+      <div class="logo">
+        <img draggable="false" :src="skill.icon" />
       </div>
-    </transition-group>
+      <div>
+        <h3>{{ skill.title }}</h3>
+        <p>
+          {{ $t("homepage.skills.knowledge") }}:
+          <span :class="knowledgeLevel(skill.level)[0]">{{
+            knowledgeLevel(skill.level)[1]
+          }}</span>
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Laravel from "../assets/img/laravel.png";
-import PHP from "../assets/img/php.png";
-import SASS from "../assets/img/sass.png";
-import CSS3 from "../assets/img/css3.png";
-import React from "../assets/img/react.png";
-import VueJS from "../assets/img/vuejs.png";
-import NodeJS from "../assets/img/nodejs.png";
-import HTML5 from "../assets/img/html5.png";
-import Java from "../assets/img/java.png";
-import JavaScript from "../assets/img/javascript.png";
-import LESS from "../assets/img/less.png";
+// Frontend
+import JS from "@/assets/img/javascript.png";
+import HTML from "@/assets/img/html5.png";
+import CSS from "@/assets/img/css3.png";
+import SASS from "@/assets/img/sass.png";
+import LESS from "@/assets/img/less.png";
+import React from "@/assets/img/react.png";
+import Vue from "@/assets/img/vuejs.png";
+
+// Backend
+import NodeJS from "@/assets/img/nodejs.png";
+import PHP from "@/assets/img/php.png";
+import Java from "@/assets/img/java.png";
+import Laravel from "@/assets/img/laravel.png";
+// import CSharp from "@/assets/img/csharp.png";
+import MySQL from "@/assets/img/mysql.png";
+
+// Other
+import Photoshop from "@/assets/img/photoshop.png";
+import Illustrator from "@/assets/img/illustrator.png";
+import Figma from "@/assets/img/figma.png";
+import VSCode from "@/assets/img/vscode.png";
 
 export default {
   name: "skills",
+  props: ["category"],
   data() {
     return {
-      Laravel,
-      PHP,
-      SASS,
-      CSS3,
-      React,
-      VueJS,
-      NodeJS,
-      HTML5,
-      Java,
-      JavaScript,
       cardHovered: false,
-      currentCategory: "all",
-      categories: {
-        backend: {
-          id: "backend",
-          name: "Бэкенд"
-        },
-        frontend: {
-          id: "frontend",
-          name: "Фронтенд"
-        }
-      },
-      skillsList: [
-        {
-          icon: JavaScript,
-          title: "JavaScript",
-          category: "frontend",
-          level: 3
-        },
-        {
-          icon: CSS3,
-          title: "CSS3",
-          category: "frontend",
-          level: 3
-        },
-        {
-          icon: SASS,
-          title: "SASS",
-          category: "frontend",
-          level: 2
-        },
-        {
-          icon: LESS,
-          title: "LESS",
-          category: "frontend",
-          level: 1
-        },
-        {
-          icon: NodeJS,
-          title: "Node.js",
-          category: "backend",
-          level: 2
-        },
-        {
-          icon: VueJS,
-          title: "Vue",
-          category: "frontend",
-          level: 2
-        },
-        {
-          icon: React,
-          title: "React",
-          category: "frontend",
-          level: 1
-        },
-        {
-          icon: Laravel,
-          title: "Laravel",
-          category: "backend",
-          level: 1
-        },
-        {
-          icon: HTML5,
-          title: "HTML5",
-          category: "frontend",
-          level: 3
-        },
-        {
-          icon: PHP,
-          title: "PHP",
-          category: "backend",
-          level: 1
-        }
+      skills: [
+        [
+          {
+            icon: JS,
+            title: "JavaScript",
+            level: 2
+          },
+          {
+            icon: HTML,
+            title: "HTML",
+            level: 3
+          },
+          {
+            icon: SASS,
+            title: "SASS",
+            level: 3
+          },
+          {
+            icon: CSS,
+            title: "CSS",
+            level: 3
+          },
+          {
+            icon: LESS,
+            title: "LESS",
+            level: 2
+          },
+          {
+            icon: React,
+            title: "React",
+            level: 1
+          },
+          {
+            icon: Vue,
+            title: "Vue",
+            level: 2
+          }
+        ],
+        [
+          {
+            icon: NodeJS,
+            title: "Node.js",
+            level: 2
+          },
+          {
+            icon: PHP,
+            title: "PHP",
+            level: 1
+          },
+          {
+            icon: Java,
+            title: "Java",
+            level: 2
+          },
+          {
+            icon: Laravel,
+            title: "Laravel",
+            level: 1
+          },
+          // {
+          //   icon: CSharp,
+          //   title: "C#",
+          //   level: 1
+          // },
+          {
+            icon: MySQL,
+            title: "MySQL",
+            level: 2
+          }
+        ],
+        [
+          {
+            icon: Photoshop,
+            title: "Photoshop",
+            level: 3
+          },
+          {
+            icon: Illustrator,
+            title: "Illustrator",
+            level: 2
+          },
+          {
+            icon: VSCode,
+            title: "VS Code",
+            level: 3
+          },
+          {
+            icon: Figma,
+            title: "Figma",
+            level: 1
+          }
+        ]
       ]
     };
   },
   created() {},
   computed: {
     filteredSkills() {
-      return this.$data.skillsList
-        .filter(skill => {
-          if (this.currentCategory == "all") return skill;
-          if (skill.category == this.currentCategory) {
-            return skill;
-          }
-        })
+      let clonedArray = this.$data.skills[this.$props.category];
+
+      return clonedArray
         .sort((a, b) => a.title.localeCompare(b.title))
         .sort((a, b) => b.level - a.level);
     }
@@ -169,17 +155,12 @@ export default {
   methods: {
     knowledgeLevel(level) {
       if (level == 1) {
-        return ["red", "Слабая"];
+        return ["low", this.$t("homepage.skills.skill_level1")];
       } else if (level == 2) {
-        return ["orange", "Средняя"];
+        return ["medium", this.$t("homepage.skills.skill_level2")];
       } else if (level == 3) {
-        return ["green", "Хорошая"];
-      } else {
-        return ["red", "Unknown"];
+        return ["high", this.$t("homepage.skills.skill_level3")];
       }
-    },
-    changeCategory(category) {
-      this.$data.currentCategory = category;
     }
   }
 };

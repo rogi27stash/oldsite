@@ -1,3 +1,29 @@
-# Dev Branch
-This branch is for features that are in **development**, do not use it if you're not helping me with bug hunting.  
-If you want to help me with translations or grammar then check the **master** branch.
+# vok-website
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
