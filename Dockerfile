@@ -13,5 +13,7 @@ RUN npm install --quiet node-gyp -g &&\
   npm install --quiet && \
   apk del native-deps
 
+RUN yarn build
+
 EXPOSE 80
 CMD [ "yarn", "start" ]
